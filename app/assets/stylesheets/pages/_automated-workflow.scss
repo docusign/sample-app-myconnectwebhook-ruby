@@ -1,0 +1,86 @@
+.automated-workflow-page {
+  color: black;
+  background-color: rgb(250, 250, 250);
+  padding: 50px 0 50px 0;
+
+  .request-form-card {
+    //investigate more accurate approach
+    height: 100vh;
+  }
+
+  .recipient-wrapper {
+    gap: 16px;
+
+    margin-bottom: 24px;
+
+    .btn {
+      &.btn-img {
+        margin: 0 8px;
+        padding: 0;
+      }
+    }
+  }
+
+  .has-error {
+    .invalid-feedback {
+      display: block;
+    }
+  }
+  .spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30% auto;
+  }
+
+  .warning-wrapper {
+    display: flex;
+
+    .warning-text {
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 22px;
+    }
+
+    .warning-img {
+      height: 24px;
+      width: 24px;
+
+      margin-right: 12px;
+    }
+  }
+
+  .card {
+    display: flex;
+    padding: 24px;
+
+    background: #eaf0ff;
+    border-radius: 16px;
+
+    width: 420px;
+
+    .order-item-wrapper {
+      display: flex;
+      justify-content: space-between;
+
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 24px;
+
+      margin: 16px 0 16px 0;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+
+      border-top: 1px solid #9ca3af;
+      margin-top: 32px;
+      padding-top: 32px;
+
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 28px;
+    }
+  }
+}

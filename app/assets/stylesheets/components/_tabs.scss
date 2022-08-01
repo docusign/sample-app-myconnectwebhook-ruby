@@ -1,0 +1,78 @@
+.nav-tabs {
+    justify-content: space-between;
+    margin-bottom: 30px;
+
+    .nav-link {
+        width: 88px;
+        height: 88px;
+        text-align: center;
+        border-color: $gray-600;
+        border-bottom-left-radius: $nav-tabs-border-radius;
+        border-bottom-right-radius: $nav-tabs-border-radius;
+        color: $gray-600;
+        position: relative;
+        font-size: 12px;
+        letter-spacing: 0.48px;
+        font-weight: $font-weight-bold;
+        text-transform: uppercase;
+        padding: 10px 10px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: flex-end;
+        @include media-breakpoint-up(md) {
+            width: 133px;
+            height: 114px;
+            font-size: 10px;
+            letter-spacing: 0.4px;
+            padding: 14px 10px;
+        }
+
+        &.active,
+        &:hover {
+            color: $nav-tabs-link-active-color;
+
+            &:before {
+                background: radial-gradient(circle closest-side, $nav-tabs-link-active-color 4px, $white 5px, $white 6px, $nav-tabs-link-active-color 7px);
+            }
+
+            .icon-holder {
+                .icon {
+                    fill: $nav-tabs-link-active-color;
+                }
+            }
+        }
+
+        &:before {
+            content: '';
+            height: 15px;
+            width: 15px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            border-radius: 15px;
+            background: radial-gradient(circle closest-side, transparent 4px, $white 5px, $white 6px, $gray-600 7px);
+            @include media-breakpoint-up(mb) {
+                top: 8px;
+                left: 8px;
+            }
+
+        }
+
+        .icon-holder {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            height: 70px;
+            max-width: 35px;
+            @include media-breakpoint-up(md) {
+                max-width: 64px;
+            }
+
+            .icon {
+                fill: $gray-600;
+            }
+        }
+    }
+}

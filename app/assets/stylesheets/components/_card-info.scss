@@ -1,0 +1,53 @@
+.card-info {
+  width: 100%;
+  background-color: $white;
+  padding: 40px 15px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 9px 39px 0 rgba(0, 0, 0, 0.05);
+  // max-width: 440px;
+  margin-bottom: 20px;
+
+  @include media-breakpoint-up(md) {
+    padding: 20px 30px;
+  }
+  @include media-breakpoint-up(lg) {
+    padding: 40px 50px;
+    margin-bottom: 0;
+  }
+
+  .card-info-image-holder {
+    margin-bottom: 15px;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 30px;
+    }
+  }
+
+  .card-info-title {
+    margin-bottom: 5px;
+    min-height: 25px;
+  }
+
+  .card-info-description {
+    min-height: 20px;
+    display: block;
+  }
+
+  .card-info-button-holder {
+    padding: 25px 0;
+  }
+
+  .card-info-list-title {
+    margin-bottom: 15px;
+    color: $success;
+
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .card-info-list {
+    text-align: left;
+  }
+}

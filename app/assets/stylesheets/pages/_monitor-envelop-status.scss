@@ -1,0 +1,34 @@
+.monitor-envelop-status-page {
+  color: black;
+  background-color: rgb(250, 250, 250);
+  padding: 50px 0 50px 0;
+
+  .request-form-card {
+    //investigate more accurate approach
+    height: 100vh;
+  }
+
+  .recipient-wrapper {
+    gap: 16px;
+
+    margin-bottom: 24px;
+
+    .btn {
+      &.btn-img {
+        margin: 0 8px;
+        padding: 0;
+      }
+    }
+  }
+
+  .envelop-status-img {
+    width: 20px;
+    height: 20px;
+    margin: 0 0 4px 4px;
+  }
+
+  .envelop-status-spinner {
+    margin-left: 4px;
+    color: $success;
+  }
+}

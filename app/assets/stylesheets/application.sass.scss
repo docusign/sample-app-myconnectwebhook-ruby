@@ -1,0 +1,14 @@
+// Entry point for your Sass build
+
+@import "core/all";
+
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "components/all";
+@import "pages/all";
+@import "layouts/all";
+body {
+  font-family: $inter;
+  background-image: url("images/background.png");
+  background-repeat: repeat-x;
+  background-color: #f1f1f1;
+}

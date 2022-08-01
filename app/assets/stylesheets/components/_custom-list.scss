@@ -1,0 +1,25 @@
+.custom-list {
+  color: black;
+  line-height: 1.36;
+  font-size: 14px;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+
+  li {
+    position: relative;
+    margin-bottom: 2px;
+
+    &:before {
+      content: "";
+      height: 6px;
+      width: 6px;
+      border-radius: 8px;
+      overflow: hidden;
+      background-color: $success;
+      display: inline-block;
+      margin-right: 10px;
+      transform: translate(0px, -2px);
+    }
+  }
+}

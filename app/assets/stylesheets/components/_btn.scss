@@ -1,0 +1,70 @@
+.btn {
+  &:disabled {
+    opacity: 0.8;
+  }
+
+  &.btn-danger {
+    &.disabled,
+    &:disabled {
+      color: #df7683;
+    }
+  }
+
+  &.btn-warning {
+    color: white;
+  }
+
+  &.btn-primary {
+    background-color: $success;
+    border-color: $success;
+    color: white;
+  }
+
+  &.btn-secondary {
+    border: 2px solid $success;
+    color: $success;
+    background-color: $white;
+    letter-spacing: 0.7px;
+
+    &:focus,
+    &:hover,
+    &:active {
+      background-color: $gray-300;
+      border-color: $success !important;
+      color: $success !important;
+    }
+
+    &.disabled,
+    &:disabled {
+      background-color: $white;
+      border-color: #d1d1d1 !important;
+      color: #d1d1d1 !important;
+    }
+  }
+  & > img.img-before {
+    margin-right: 10px;
+    height: 20px;
+    width: 20px;
+  }
+
+  & > .spinner-btn {
+    margin-right: 8px;
+  }
+
+  &.btn-img {
+    width: 40px;
+    height: 40px;
+
+    margin: 0;
+    padding: 0;
+
+    opacity: 0.5;
+
+    background: transparent;
+
+    &:focus,
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
