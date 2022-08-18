@@ -10,7 +10,7 @@ def load_config_data
   begin
     config_file_contents = File.read(config_file_path)
   rescue Errno::ENOENT
-    $stderr.puts "missing config file"
+    $stderr.puts "Missing config/appsettings.yml file, see README.md for details."
     raise
   end
   YAML.unsafe_load(config_file_contents)
