@@ -19,6 +19,8 @@ Rails.application.configure do
   # Enable server timing
   config.server_timing = true
 
+  config.web_console.permissions = "172.16.0.0/12"
+
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
   if Rails.root.join("tmp/caching-dev.txt").exist?
@@ -70,10 +72,7 @@ Rails.application.configure do
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
 
-  config.hosts << "6071-194-44-56-31.ngrok.io"
-  config.hosts << "d8df-188-163-73-204.eu.ngrok.io"
-  config.hosts << "b19a-194-44-57-86.ngrok.io"
-  config.hosts << "a0ff-188-163-74-151.eu.ngrok.io"
-  config.hosts << "myconnect.dssigmadev.link"
 
+  config.hosts << "{NGROK_HOST}.ngrok.io"
+  config.hosts << "localhost"
 end

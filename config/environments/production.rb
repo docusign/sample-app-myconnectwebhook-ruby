@@ -93,12 +93,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.hosts << "6071-194-44-56-31.ngrok.io"
-  config.hosts << "d8df-188-163-73-204.eu.ngrok.io"
-  config.hosts << "b19a-194-44-57-86.ngrok.io"
-  config.hosts << "a0ff-188-163-74-151.eu.ngrok.io"
-  config.hosts << "myconnect.dssigmadev.link"
+  config.hosts << "{NGROK_HOST}"
   config.hosts << "localhost"
 
 end
-

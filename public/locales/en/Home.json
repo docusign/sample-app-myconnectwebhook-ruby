@@ -1,19 +1,19 @@
 {
-  "Header1": "My Connect",
-  "Header2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna",
+  "Header1": "MyConnectWebhook",
+  "Header2": "Discover how the DocuSign Connect webhook service can help monitor and automate business processes",
   "Footer1": "DocuSign: It's time to agree better",
   "Footer2": "<p>DocuSign helps organizations connect and automate how they prepare, sign, act on, and manage agreements.</p>",
   "SandBoxButton": "Create Developer Account",
   "LearnMoreButton": "Learn More",
   "Card1": {
-    "Title": "Bulk send & Monitor envelope status",
-    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do",
-    "Features": "<h4 class='h4 card-info-list-title'>DocuSign Features</h4><ul class='custom-list'><li>Feature name 01</li><li>Feature name 02</li><li>Feature name 03</li></ul>",
+    "Title": "Monitor envelope status",
+    "Description": "Demonstrates how your app can use DocuSign Connect webhook notification to update information systems with the envelope’s status and timing.",
+    "Features": "<h4 class='h4 card-info-list-title'>DocuSign Features</h4><ul class='custom-list'><li>Bulk sending envelopes</li><li>Envelope Custom fields</li><li>DocuSign Connect webhook service</li></ul>",
     "Button": "Get Started"
   },
   "Card2": {
     "Title": "Automate workflow based on Clickwrap agreement",
-    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do",
+    "Description": "Demonstrates how to trigger a business workflow based on Connect notifications from a clickwrap agreement.",
     "Features": "<h4 class='h4 card-info-list-title'>DocuSign Features</h4><ul class='custom-list'><li>Single Signer</li><li>Send using a template</li><li>Consent to terms and conditions using a clickwrap</li></ul>",
     "Button": "Get Started"
   },
