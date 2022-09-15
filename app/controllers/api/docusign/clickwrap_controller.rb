@@ -7,10 +7,16 @@ module Api
       before_action :check_auth, only: %i[init_params store_data]
 
       def init_params
+        args = {
+          account_id: session["ds_account_id"],
+          base_path: session["ds_base_path"],
+          access_token: session["ds_access_token"]
+        }
+
         render json: {
           clickwrap_environment: session[:ds_base_path],
           clickwrap_account_id: session[:ds_account_id],
-          clickwrap_id: Rails.configuration.clickwrap_id,
+          clickwrap_id: Clickwraps::ClickwrapService.new(args).worker,
           client_user_id: "#{session[:session_id]}-#{Time.now.to_i}"
         }
       end
