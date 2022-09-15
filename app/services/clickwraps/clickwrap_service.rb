@@ -22,7 +22,7 @@ module Clickwraps
       accounts_api = DocuSign_Click::AccountsApi.new(api_client)
 
       clickwrap_options = DocuSign_Click::GetClickwrapsOptions.new()
-      clickwrap_options.name = "MyConnectWebhook-clickwrap4"
+      clickwrap_options.name = "MyConnectWebhook-cw"
 
       clickwraps = accounts_api.get_clickwraps(
         args[:account_id],
@@ -30,7 +30,6 @@ module Clickwraps
       )
 
       if clickwraps.clickwraps.empty?
-        puts "NOT FOUND"
         #create clickwrap
         clickwrap_request = make_clickwrap
         results = accounts_api.create_clickwrap(args[:account_id], clickwrap_request)
@@ -45,7 +44,6 @@ module Clickwraps
           activate_clickwrap_request
         )
       else
-        puts "FOUND"
         clickwrap_id = clickwraps.clickwraps[0].clickwrap_id
       end
 
@@ -92,7 +90,7 @@ module Clickwraps
       clickwrap_request = DocuSign_Click::ClickwrapRequest.new(
         displaySettings: display_settings,
         documents: documents,
-        name: "MyConnectWebhook-clickwrap4",
+        name: "MyConnectWebhook-cw",
         requireReacceptance: true
       )
 
