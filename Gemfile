@@ -15,6 +15,8 @@ gem "redis", "~> 4.0"
 gem "sprockets-rails"
 gem "stimulus-rails"
 gem "turbo-rails"
+gem "yaml"
+gem 'psych', '< 4'
 
 group :development do
   # gem "hotwire-livereload", "~> 1.1"

@@ -5,6 +5,7 @@ import { Button } from "react-bootstrap";
 import { SubmitButton } from "../../../components/SubmitButton";
 import { RecipientList } from "./RecipientList";
 import { EnvelopList } from "./EnvelopList";
+import parse from 'html-react-parser';
 
 export function RequestForm({
   recipients,
@@ -24,7 +25,7 @@ export function RequestForm({
     <div className="request-form-card col-lg-6">
       <div className="form-holder bg-white pt-5 pb-5">
         <h1 className="mb-4">{t("Title")}</h1>
-        <p className="mb-4">{t("SubTitle")}</p>
+        <p className="mb-4">{parse(t("SubTitle"))}</p>
         <form
           onSubmit={onSubmit}
           className={submitted ? "was-validated" : ""}

@@ -156,6 +156,7 @@ GEM
     parser (3.1.2.0)
       ast (~> 2.4.1)
     pg (1.4.1)
+    psych (3.3.2)
     public_suffix (4.0.7)
     puma (5.6.4)
       nio4r (~> 2.0)
@@ -246,6 +247,7 @@ GEM
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    yaml (0.2.0)
     zeitwerk (2.6.0)
 
 PLATFORMS
@@ -261,6 +263,7 @@ DEPENDENCIES
   jsbundling-rails
   omniauth-oauth2 (~> 1.8.0)
   pg
+  psych (< 4)
   puma (~> 5.0)
   rails (~> 7.0.3)
   redis (~> 4.0)
@@ -271,6 +274,7 @@ DEPENDENCIES
   turbo-rails
   tzinfo-data
   web-console
+  yaml
 
 RUBY VERSION
    ruby 3.1.2p20

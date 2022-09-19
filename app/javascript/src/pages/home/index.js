@@ -41,7 +41,7 @@ export function Home() {
 
   return (
     <div className="home-page">
-      <TitleSection title={t("Header1")} subTitle={t("Header2")} />
+      <TitleSection title={t("Header1")} subTitle={parse(t("Header2"))} />
       <FeaturesSection>
         <FeatureCard
           imgSrc="/images/ic-bulk-send.png"
