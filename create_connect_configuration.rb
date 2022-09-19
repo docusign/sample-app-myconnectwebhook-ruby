@@ -115,9 +115,10 @@ https://{YOUR_NGROK_HOST}.ngrok.io/api/docusign/trigger/do_process.json. See REA
     envelopeEvents: [
       "Sent",
       "Delivered",
-      "Completed",
-      "Declined",
-      "Voided"
+      "Voided",
+      "Resent",
+      "Corrected",
+      "Deleted"
     ],
     eventData: connect_event_data,
     allowEnvelopePublish: "true",
@@ -134,11 +135,10 @@ https://{YOUR_NGROK_HOST}.ngrok.io/api/docusign/trigger/do_process.json. See REA
       "envelope-deleted"
     ],
     recipientEvents: [
-      "Sent",
-      "Delivered",
       "Declined",
       "Completed",
-      "AutoResponded"
+      "AutoResponded",
+      "FinishLater"
     ],
     signMessageWithX509Certificate: "true"
   )

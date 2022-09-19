@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
 import { Form } from "react-bootstrap";
 import { SubmitButton } from "../../../components/SubmitButton";
+import parse from 'html-react-parser';
 
 export function RecipientForm({
   userData,
@@ -17,7 +18,7 @@ export function RecipientForm({
     <div className="request-form-card col-6">
       <div className="form-holder bg-white pt-5 pb-5">
         <h1 className="mb-4">{t("Title")}</h1>
-        <p className="mb-4">{t("SubTitle")}</p>
+        <p className="mb-4">{parse(t("SubTitle"))}</p>
         <form onSubmit={onSubmit} noValidate>
           {errors?.onSubmit && (
             <div className="alert alert-danger mt-2">{errors?.onSubmit}</div>
