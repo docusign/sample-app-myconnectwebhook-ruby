@@ -73,6 +73,6 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
 
 
-  config.hosts << "{NGROK_HOST}.ngrok.io"
+  config.hosts << "{NGROK_HOST}"
   config.hosts << "localhost"
 end

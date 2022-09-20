@@ -8,6 +8,7 @@ import { ApiDescription } from "./components/ApiDescription";
 import { useWebSocket } from "./useWebSocket";
 import { useAPI } from "../../api/apiHooks";
 import AppContext from "../../appContext";
+import { ConfirmationComplete } from "./components/ConfirmationComplete";
 
 export function MonitorEnvelopStatus() {
   const { session } = useContext(AppContext);
@@ -64,18 +65,24 @@ export function MonitorEnvelopStatus() {
     <section className="monitor-envelop-status-page">
       <div className="container">
         <div className="row">
-          <RequestForm
-            recipients={state.recipients}
-            envelopes={state.envelopes}
-            onChange={handleChange}
-            onAddRecipient={handleAddRecipient}
-            onDeleteRecipient={handleDeleteRecipient}
-            onSubmit={handleSubmit}
-            submitted={state.submitted}
-            loading={isLoading}
-            errors={state.errors}
-            connected={connected}
-          />
+        {state.submitted ? (
+            <ConfirmationComplete
+              envelopes={state.envelopes}
+              connected={connected}
+              submitted={state.submitted}
+            />
+          ) : (
+            <RequestForm
+              recipients={state.recipients}
+              onChange={handleChange}
+              onAddRecipient={handleAddRecipient}
+              onDeleteRecipient={handleDeleteRecipient}
+              onSubmit={handleSubmit}
+              submitted={state.submitted}
+              loading={isLoading}
+              errors={state.errors}
+            />
+          )}
           <ApiDescription />
         </div>
       </div>

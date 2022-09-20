@@ -4,12 +4,10 @@ import { useTranslation } from "react-i18next";
 import { Button } from "react-bootstrap";
 import { SubmitButton } from "../../../components/SubmitButton";
 import { RecipientList } from "./RecipientList";
-import { EnvelopList } from "./EnvelopList";
 import parse from 'html-react-parser';
 
 export function RequestForm({
   recipients,
-  envelopes,
   onChange,
   onAddRecipient,
   onDeleteRecipient,
@@ -17,7 +15,6 @@ export function RequestForm({
   submitted,
   errors,
   loading,
-  connected,
 }) {
   const { t } = useTranslation("MonitorEnvelopStatus");
 
@@ -45,12 +42,6 @@ export function RequestForm({
             {t("AddRecipientButton")}
           </Button>
           <hr />
-          {submitted && (
-            <>
-              <h3 className="mb-4">{t("EnvelopesTitle")}</h3>
-              <EnvelopList envelopes={envelopes} connected={connected} />
-            </>
-          )}
           {!submitted && (
             <SubmitButton loading={loading}>{t("SubmitButton")}</SubmitButton>
           )}
@@ -68,15 +59,6 @@ RequestForm.propTypes = {
       email: PropTypes.string.isRequired,
     })
   ),
-  envelopes: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      email: PropTypes.string.isRequired,
-      status: PropTypes.string.isRequired,
-      timestamp: PropTypes.instanceOf(Date),
-    })
-  ),
   onChange: PropTypes.func.isRequired,
   onAddRecipient: PropTypes.func.isRequired,
   onDeleteRecipient: PropTypes.func.isRequired,
@@ -85,10 +67,8 @@ RequestForm.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   errors: PropTypes.object.isRequired,
   loading: PropTypes.bool.isRequired,
-  connected: PropTypes.bool.isRequired,
 };
 
 RequestForm.defaultProps = {
-  envelopes: [],
   recipients: [],
 };
