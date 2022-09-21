@@ -18,7 +18,7 @@ export function EnvelopeList({ envelopes, connected }) {
               text={
                 connected
                   ? t("EnvelopeList.StatusUpdateIsInProgress")
-                  : t("EnveloepList.StatusUpdateIsNotPossible")
+                  : t("EnvelopeList.StatusUpdateIsNotPossible")
               }
             >
               {connected ? (
@@ -45,7 +45,7 @@ export function EnvelopeList({ envelopes, connected }) {
       <tbody>
         {envelopes.map((envelope) => (
           <tr key={envelope.id}>
-            <td>{enveloe.name}</td>
+            <td>{envelope.name}</td>
             <td>{envelope.email}</td>
             <td>{envelope.status}</td>
             <td>{envelope.timestamp.toLocaleTimeString()}</td>
