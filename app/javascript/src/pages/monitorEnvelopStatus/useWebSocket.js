@@ -5,7 +5,6 @@ export const useWebSocket = (url, channel) => {
   const consumer = useRef(null);
   const [connected, setConnected] = useState(false);
 
-  console.log(`\n\n\n CONNECT WEBSOCKET URL ISSSSSSSSS: ${url} \n\n\n`);
   const connect = (callback) => {
     consumer.current = createConsumer(url);
     consumer.current.subscriptions.create(channel, {

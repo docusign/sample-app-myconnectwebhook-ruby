@@ -18,6 +18,6 @@
   },
   "ConfirmationComplete": {
     "Title": "Clickwrap complete!",
-    "SubTitle": "<p>You have completed the agreement.</p><p>If you have accepted the sample purchase license agreement, check your email to see a sample order confirmation.<p>"
+    "SubTitle": "<p>You have completed the agreement.</p><p>If you have accepted the sample purchase license agreement, check your email to see a sample purchase confirmation.<p>"
   }
 }
