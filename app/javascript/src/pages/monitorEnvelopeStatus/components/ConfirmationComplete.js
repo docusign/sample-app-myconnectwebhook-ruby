@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
-import { EnvelopList } from "./EnvelopList";
+import { EnvelopeList } from "./EnvelopeList";
 import parse from "html-react-parser";
 
 export function ConfirmationComplete({
@@ -9,7 +9,7 @@ export function ConfirmationComplete({
   connected,
   submitted,
 }) {
-  const { t } = useTranslation("MonitorEnvelopStatus");
+  const { t } = useTranslation("MonitorEnvelopeStatus");
 
   return (
     <div className="request-form-card col-6">
@@ -20,7 +20,7 @@ export function ConfirmationComplete({
           {submitted && (
             <>
               <h3 className="mb-4">{t("EnvelopesTitle")}</h3>
-              <EnvelopList envelopes={envelopes} connected={connected} />
+              <EnvelopeList envelopes={envelopes} connected={connected} />
             </>
           )}
         </form>

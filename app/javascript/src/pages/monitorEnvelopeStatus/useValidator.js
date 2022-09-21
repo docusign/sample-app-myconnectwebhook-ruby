@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import * as EmailValidator from "email-validator";
 
 export const useValidator = () => {
-  const { t } = useTranslation("MonitorEnvelopStatus");
+  const { t } = useTranslation("MonitorEnvelopeStatus");
 
   const objectIsEmpty = (obj) =>
     obj &&

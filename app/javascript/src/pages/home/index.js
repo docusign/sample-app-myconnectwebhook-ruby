@@ -45,7 +45,7 @@ export function Home() {
           description={parse(t("Card1.Description"))}
           featuresDescription={parse(t("Card1.Features"))}
           buttonTitle={t("Card1.Button")}
-          onClick={(event) => handleClick(event, "/monitorEnvelopStatus")}
+          onClick={(event) => handleClick(event, "/monitorEnvelopeStatus")}
         />
         <FeatureCard
           imgSrc="/images/ik-click-confirm.png"

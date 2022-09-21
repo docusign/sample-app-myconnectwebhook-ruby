@@ -1,4 +1,4 @@
-export const mapRecipientToEnvelop = (recipient) => ({
+export const mapRecipientToEnvelope = (recipient) => ({
   id: `${recipient.id}`,
   name: recipient.fullName,
   email: recipient.email,
@@ -6,7 +6,7 @@ export const mapRecipientToEnvelop = (recipient) => ({
   timestamp: new Date(),
 });
 
-export const mapSignerToEnvelop = (signer) => ({
+export const mapSignerToEnvelope = (signer) => ({
   id: signer.signer_email,
   name: signer.signer_name,
   email: signer.signer_email,

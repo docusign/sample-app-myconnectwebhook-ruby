@@ -1,5 +1,5 @@
 import React, { useReducer, useContext } from "react";
-import * as API from "../../api/monitorEnvelopStatusAPI";
+import * as API from "../../api/monitorEnvelopeStatusAPI";
 import * as Mapper from "./mapper";
 import { actions, reducer } from "./reducer";
 import { useValidator } from "./useValidator";
@@ -10,7 +10,7 @@ import { useAPI } from "../../api/apiHooks";
 import AppContext from "../../appContext";
 import { ConfirmationComplete } from "./components/ConfirmationComplete";
 
-export function MonitorEnvelopStatus() {
+export function MonitorEnvelopeStatus() {
   const { session } = useContext(AppContext);
   const formIsValid = useValidator();
   const [connect, disconnect, connected] = useWebSocket(
@@ -54,7 +54,7 @@ export function MonitorEnvelopStatus() {
       dispatch(actions.handleGetStatusResponse(data));
     });
 
-    dispatch(actions.mapRecipientsToEnvelops());
+    dispatch(actions.mapRecipientsToEnvelopes());
   };
 
   const handleChange = (payload) => {
@@ -62,7 +62,7 @@ export function MonitorEnvelopStatus() {
   };
 
   return (
-    <section className="monitor-envelop-status-page">
+    <section className="monitor-envelope-status-page">
       <div className="container">
         <div className="row">
         {state.submitted ? (

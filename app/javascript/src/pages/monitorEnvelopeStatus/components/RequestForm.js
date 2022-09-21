@@ -16,7 +16,7 @@ export function RequestForm({
   errors,
   loading,
 }) {
-  const { t } = useTranslation("MonitorEnvelopStatus");
+  const { t } = useTranslation("MonitorEnvelopeStatus");
 
   return (
     <div className="request-form-card col-lg-6">

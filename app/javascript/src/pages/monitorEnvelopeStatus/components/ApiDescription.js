@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import parse from 'html-react-parser';
 
 export function ApiDescription() {
-  const { t } = useTranslation('MonitorEnvelopStatus');
+  const { t } = useTranslation('MonitorEnvelopeStatus');
   return (
     <div className="col-lg-6">
       <div className="accordion" id="accordionSeeMore">
