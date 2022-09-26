@@ -1,0 +1,35 @@
+{
+  "Title": "Monitor envelope status from bulk send request",
+  "SubTitle": "<p>Demonstrates how to use the DocuSign Connect webhook service to monitor the status of each envelope in a bulk send request for a sample activity waiver.</p><p>Add recipients to begin.</p>",
+  "EnvelopesTitle": "Envelopes status",
+  "SubmitButton": "Submit",
+  "AddRecipientButton": "Add recipient",
+  "Recipient": {
+    "FullNamePlaceholder": "Full name",
+    "Emaillaceholder": "Email",
+    "DeleteRecipientButton": "Remove the recipient"
+  },
+  "EnvelopeList": {
+    "Id": "#",
+    "Name": "Name",
+    "Email": "Email",
+    "Status": "Status",
+    "Timestamp": "Timestamp",
+    "StatusUpdateIsNotPossible": "Status update is impossible since the server is offline",
+    "StatusUpdateIsInProgress": "The WebSocket is running"
+  },
+  "ApiDecription": {
+    "SeeMore": "Behind the scenes",
+    "CodeFlow": "<h3>This sample features:</h3><ul><li>Anchor tagging</li><li>Custom fields</li><li>Bulk send</li><li>DocuSign Connect webhook service</li></ul><h3>Code flow:</h3><p>View source code <a target='_blank' rel='noopener noreferrer' href='https://github.com/docusign/sample-app-myconnectwebhook-ruby/blob/main/app/services/e_sign/bulk_sending_envelopes_service.rb'>bulk_sending_envelopes_service.rb</a> on GitHub.</p><h5>Step 1</h5><p>Once recipient information is submitted by the user, the bulk send request is prepared. First, an envelope definition is created with a recipient, a document, and tabs. The recipient defined in the envelope definition uses placeholder dummy values–the actual recipient will be updated in the next step to use user input. The envelope document is a sample activity waiver form that the app provides and tabs are placed on that document using <a target='_blank' rel='noopener noreferrer' href='https://developers.docusign.com/docs/esign-rest-api/esign101/concepts/tabs/auto-place/'>anchor tagging</a>. The <code>status</code> field on the envelope definition is set to <code>created</code> so that when we call <a target='_blank' rel='noopener noreferrer' href='https://developers.docusign.com/docs/esign-rest-api/reference/envelopes/envelopes/create/'>Envelopes:create</a>, the envelope is created but not yet sent.</p><h5>Step 2</h5><p>User input is used to create a bulk send recipients list using  <a target='_blank' rel='noopener noreferrer' href='https://developers.docusign.com/docs/esign-rest-api/reference/bulkenvelopes/bulksend/createbulksendlist/'>BulkSend:createBulkSendList</a>. Once the bulk send list is created, we attach its ID to the envelope created in the previous step as a custom field using <a target='_blank' rel='noopener noreferrer' href='https://developers.docusign.com/docs/esign-rest-api/reference/envelopes/envelopecustomfields/create/'>EnvelopeCustomFields:create</a>. We add this custom field so that when we receive DocuSign Connect notifications on the envelope status in the next step, we can match the notification to the correct bulk send request. Then we can use the envelope ID from the previous step and the ID from the bulk send list we just created to create the bulk send request using <a target='_blank' rel='noopener noreferrer' href='https://developers.docusign.com/docs/esign-rest-api/reference/bulkenvelopes/bulksend/createbulksendrequest/'>BulkSend:createBulkSendRequest</a>. This method replaces the recipient placeholder values in the envelope definition with the recipient information in the bulk send list and sends the envelope to each recipient.</p><h5>Step 3</h5><p>Once the bulk send process is complete, we wait for the DocuSign Connect webhook service to send notifications of envelope status changes. The following screenshot displays the events to which we have subscribed with our custom Connect configuration in our preconfigured developer account, as well as the data that is included with each Connect notification. As the app receives Connect notifications, they are displayed to the user in real time.</p><p>More possible webhook event triggers: <ul><li><code>recipient-autoresponded</code>: Sent when DocuSign gets notification that an email delivery has failed. The delivery failure could be for a number of reasons, such as a bad email address or that the recipient’s email system auto-responds to the email from DocuSign.</li><li><code>recipient-declined</code>: Sent when the recipient declines to sign the document in the envelope.</li><li><code>recipient-finish-later</code>: Sent when the recipient selects “Finish Later” on an envelope within the DocuSign signing website.</li></ul></p></p><p>See the <a target='_blank' rel='noopener noreferrer' href='https://developers.docusign.com/platform/webhooks/connect/event-triggers/'>full list of webhook event triggers</a> with the <a target='_blank' rel='noopener noreferrer' href='https://developers.docusign.com/platform/webhooks/connect/'>DocuSign Connect</a> webhook service.</p><p><img width='600px' src='/images/envelopes_connect_config.png' alt='Envelope Connect config' /></p>"
+  },
+  "Error": {
+    "FullNameIsRequired": "Full name is required",
+    "EmailIsRequired": "Email is required",
+    "EmailIsNotUnique": "Email is not unique",
+    "EmailFormatIsWrong": "Email format is wrong"
+  },
+  "ConfirmationComplete": {
+    "Title": "Bulk send complete!",
+    "SubTitle": "<p>Expected response: Each recipient receives an email with a link to the sample waiver form.</p><p><strong>Note:</strong> The Status spinner will spin as long as the webhook is in service. The Status will update as the envelope is sent and the recipient takes action on the envelope. The Timestamp will also update with each new status.<p><p>Expected webhook event triggers: <ul><li><code>envelope-sent</code>: Sent when the email notification, with a link to the envelope, is sent to the recipient.</li><li><code>envelope-delivered</code>: Sent when the recipient has opened the envelope through the DocuSign signing website.</li><li><code>recipient-completed</code>: Sent when the recipient has completed their actions for the envelope, typically (but not always) by signing.</li></ul><p>Status updates can take up to 30 seconds to appear.</p>"
+  }
+}

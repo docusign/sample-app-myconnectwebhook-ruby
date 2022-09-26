@@ -4,7 +4,7 @@ const ADD_RECIPIENT = "ADD_RECIPIENT";
 const DELETE_RECIPIENT = "DELETE_RECIPIENT";
 const SET_ERRORS = "SET_ERRORS";
 const HANDLE_GET_STATUS_RESPONSE = "HANDLE_GET_STATUS_RESPONSE";
-const MAP_RECIPIENTS_TO_ENVELOPS = "MAP_RECIPIENTS_TO_ENVELOPS";
+const MAP_RECIPIENTS_TO_ENVELOPES = "MAP_RECIPIENTS_TO_ENVELOPES";
 const HANDLE_RECIPIENT_CHANGE = "HANDLE_RECIPIENT_CHANGE";
 
 export const actions = {
@@ -15,7 +15,7 @@ export const actions = {
     type: HANDLE_GET_STATUS_RESPONSE,
     payload: { response },
   }),
-  mapRecipientsToEnvelops: () => ({ type: MAP_RECIPIENTS_TO_ENVELOPS }),
+  mapRecipientsToEnvelopes: () => ({ type: MAP_RECIPIENTS_TO_ENVELOPES }),
   handleRecipientChange: (payload) => ({
     type: HANDLE_RECIPIENT_CHANGE,
     payload: { ...payload },
@@ -55,18 +55,18 @@ export const reducer = (state, action) => {
     case SET_ERRORS:
       return { ...state, errors: action.payload.errors };
     case HANDLE_GET_STATUS_RESPONSE: {
-      const updatedEnvelop = Mapper.mapSignerToEnvelop(action.payload.response);
+      const updatedEnvelope = Mapper.mapSignerToEnvelope(action.payload.response);
       return {
         ...state,
-        envelopes: state.envelopes.map((envelop) =>
-          envelop.email === updatedEnvelop.email ? updatedEnvelop : envelop
+        envelopes: state.envelopes.map((envelope) =>
+          envelope.email === updatedEnvelope.email ? updatedEnvelope : envelope
         ),
       };
     }
-    case MAP_RECIPIENTS_TO_ENVELOPS:
+    case MAP_RECIPIENTS_TO_ENVELOPES:
       return {
         ...state,
-        envelopes: state.recipients.map(Mapper.mapRecipientToEnvelop),
+        envelopes: state.recipients.map(Mapper.mapRecipientToEnvelope),
         submitted: true,
       };
     case HANDLE_RECIPIENT_CHANGE: {

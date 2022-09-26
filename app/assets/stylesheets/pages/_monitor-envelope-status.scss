@@ -1,4 +1,4 @@
-.monitor-envelop-status-page {
+.monitor-envelope-status-page {
   color: black;
   background-color: rgb(250, 250, 250);
   padding: 50px 0 50px 0;
@@ -21,13 +21,13 @@
     }
   }
 
-  .envelop-status-img {
+  .envelope-status-img {
     width: 20px;
     height: 20px;
     margin: 0 0 4px 4px;
   }
 
-  .envelop-status-spinner {
+  .envelope-status-spinner {
     margin-left: 4px;
     color: $success;
   }

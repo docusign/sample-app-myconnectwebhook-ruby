@@ -22,10 +22,6 @@ export function Home() {
 
   const resourceList = [
     {
-      name: t("Resources.DocuSignDeveloperCenter"),
-      href: "https://developers.docusign.com/",
-    },
-    {
       name: t("Resources.DocuSignConnect"),
       href: "https://developers.docusign.com/platform/webhooks/connect/",
     },
@@ -49,7 +45,7 @@ export function Home() {
           description={parse(t("Card1.Description"))}
           featuresDescription={parse(t("Card1.Features"))}
           buttonTitle={t("Card1.Button")}
-          onClick={(event) => handleClick(event, "/monitorEnvelopStatus")}
+          onClick={(event) => handleClick(event, "/monitorEnvelopeStatus")}
         />
         <FeatureCard
           imgSrc="/images/ik-click-confirm.png"
@@ -65,7 +61,7 @@ export function Home() {
         description={parse(t("Footer2"))}
         primaryLink={{
           name: t("SandBoxButton"),
-          href: "https://go.docusign.com/sandbox/productshot?elq=16799",
+          href: "https://go.docusign.com/o/sandbox/",
         }}
         secondaryLink={{
           name: t("LearnMoreButton"),

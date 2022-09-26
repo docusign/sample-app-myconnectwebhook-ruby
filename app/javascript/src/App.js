@@ -4,7 +4,7 @@ import AppContext from "./appContext";
 import { logIn, logOut, getStatus } from "./api/auth";
 import { Layout } from "./components/Layout";
 import { Home } from "./pages/home";
-import { MonitorEnvelopStatus } from "./pages/monitorEnvelopStatus";
+import { MonitorEnvelopeStatus } from "./pages/monitorEnvelopeStatus";
 import { AutomatedWorkflow } from "./pages/automatedWorkflow";
 
 export function App() {
@@ -39,7 +39,7 @@ export function App() {
   const routes = (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/monitorEnvelopStatus" element={<MonitorEnvelopStatus />} />
+      <Route path="/monitorEnvelopeStatus" element={<MonitorEnvelopeStatus />} />
       <Route path="/automatedWorkflow" element={<AutomatedWorkflow />} />
     </Routes>
   );

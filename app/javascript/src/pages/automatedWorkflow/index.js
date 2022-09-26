@@ -25,14 +25,6 @@ const initialState = {
   errors: {},
 };
 
-const orderData = {
-  items: [
-    { id: 1, name: "Item (1)", price: "$17.01" },
-    { id: 2, name: "Postage", price: "$2.01" },
-  ],
-  total: "$19.02",
-};
-
 export function AutomatedWorkflow() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const formIsValid = useValidator();
@@ -57,12 +49,14 @@ export function AutomatedWorkflow() {
   };
 
   const handleAgreed = async (agreementData) => {
-    const request = Mapper.createStoreDataRequest(
-      state.userData,
-      agreementData
-    );
-    await apiCalls.storeData(request);
-    dispatch(actions.handleAgreed({ agreementData }));
+    if(agreementData.clientUserId == state.clickWrap.clientUserId){
+      const request = Mapper.createStoreDataRequest(
+        state.userData,
+        agreementData
+      );
+      await apiCalls.storeData(request);
+      dispatch(actions.handleAgreed({ agreementData }));
+    }
   };
 
   const handleDeclined = (agreementData) => {
@@ -74,7 +68,7 @@ export function AutomatedWorkflow() {
       <div className="container">
         <div className="row">
           {state.agreed ? (
-            <ConfirmationComplete orderData={orderData} />
+            <ConfirmationComplete />
           ) : (
             <RecipientForm
               userData={state.userData}

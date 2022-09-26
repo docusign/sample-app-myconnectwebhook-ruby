@@ -1,20 +1,20 @@
-# Ruby on Rails and React: MyConnect Sample Application
+# Ruby on Rails and React: MyConnectWebhook Sample Application
 
-### Github repo: MyConnectSampleApp
+### Github repo: MyConnectWebhookSampleApp
 
 ## Introduction
-MyConnect is a DocuSign sample application written in Ruby on Rails (server) and React (client). You can find a live instance running at [https://myconnect.sampleapps.docusign.com/](https://myconnect.sampleapps.docusign.com/).
+MyConnectWebhook is a DocuSign sample application written in Ruby on Rails (server) and React (client). You can find a live instance running at [https://myconnectwebhook.sampleapps.docusign.com/](https://myconnectwebhook.sampleapps.docusign.com/).
 
-MyConnect demonstrates the following:
+MyConnectWebhook demonstrates the following:
 
 1. **Authentication** with DocuSign via [JSON Web Token (JWT) Grant](https://developers.docusign.com/esign-rest-api/guides/authentication/oauth2-jsonwebtoken).
-2. **Bulk Sending Multiple Envelopes:** ([Source](./app/services/e_sign/bulk_sending_envelopes_service.rb))  
+2. **Bulk Sending Multiple Envelopes:** ([Source](./app/services/e_sign/bulk_sending_envelopes_service.rb))
    This example uses the DocuSign [eSignature REST API](https://developers.docusign.com/esign-rest-api) to [Bulk Send](https://developers.docusign.com/docs/esign-rest-api/reference/bulkenvelopes/bulksend/) multiple envelopes based on PDF document template, and filling data dynamically.
 3. **Tracking User Signing Progress with Docusign Connect feature.** After the request has been sent to Docusign, the app awaits for webhook requests from [Docusign Connect](https://developers.docusign.com/platform/webhooks/connect/) and displays the result on UI.
-4. **Signing Clickwrap Document:** ([Source](./app/javascript/src/pages/automatedWorkflow/index.js))  
+4. **Signing Clickwrap Document:** ([Source](./app/javascript/src/pages/automatedWorkflow/index.js))
    This example demonstates signing process of DocuSign [Clickwrap](https://developers.docusign.com/docs/click-api/how-to/create-clickwraps/) document.
-5. **Sending out Confirmation Envelope after Successful Clickwrap Signature:** ([Source](./app/services/e_sign/send_envelope_service.rb))  
-   This example uses the DocuSign [eSignature REST API](https://developers.docusign.com/esign-rest-api), demonstrating how to [crete an envelope](https://developers.docusign.com/docs/esign-rest-api/reference/envelopes/envelopes/create/). The example sends an envelope based on PDF template.  
+5. **Sending out Confirmation Envelope after Successful Clickwrap Signature:** ([Source](./app/services/e_sign/send_envelope_service.rb))
+   This example uses the DocuSign [eSignature REST API](https://developers.docusign.com/esign-rest-api), demonstrating how to [crete an envelope](https://developers.docusign.com/docs/esign-rest-api/reference/envelopes/envelopes/create/). The example sends an envelope based on PDF template.
 
 ## Installation
 
@@ -116,14 +116,14 @@ https://admindemo.docusign.com/connect
 ```
 In the `URL to Publish` field enter `https://{YOUR_NGROK_HOST}.ngrok.io/api/docusign/trigger/do_process.json`.
 
-This will allow Connect to send request to your local environment. 
+This will allow Connect to send request to your local environment.
 
-## Running MyConnect Sample App
+## Running MyConnectWebhook Sample App
 
 ### Manual
 
 ```
- bin/dev 
+ bin/dev
 ```
 Open a browser to **http://localhost:3000**
 

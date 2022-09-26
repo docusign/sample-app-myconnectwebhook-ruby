@@ -4,7 +4,7 @@ import { Button, Form } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
 export function Recipient({ recipient, onDelete, onChange, errors, loading }) {
-  const { t } = useTranslation("MonitorEnvelopStatus");
+  const { t } = useTranslation("MonitorEnvelopeStatus");
   return (
     <div className="recipient-wrapper d-flex">
       <div className="recipient-full-name-wrapper d-flex">

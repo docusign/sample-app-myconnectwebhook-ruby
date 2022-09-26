@@ -4,26 +4,26 @@ import { useTranslation } from "react-i18next";
 import { Spinner } from "react-bootstrap";
 import { TooltipOverlay } from "./TooltipOverlay";
 
-export function EnvelopList({ envelopes, connected }) {
-  const { t } = useTranslation("MonitorEnvelopStatus");
+export function EnvelopeList({ envelopes, connected }) {
+  const { t } = useTranslation("MonitorEnvelopeStatus");
   return (
-    <table className="envelop-table table table-striped">
+    <table className="envelope-table table table-striped">
       <thead>
         <tr>
-          <th>{t("EnvelopList.Name")}</th>
-          <th>{t("EnvelopList.Email")}</th>
+          <th>{t("EnvelopeList.Name")}</th>
+          <th>{t("EnvelopeList.Email")}</th>
           <th>
-            {t("EnvelopList.Status")}
+            {t("EnvelopeList.Status")}
             <TooltipOverlay
               text={
                 connected
-                  ? t("EnvelopList.StatusUpdateIsInProgress")
-                  : t("EnvelopList.StatusUpdateIsNotPossible")
+                  ? t("EnvelopeList.StatusUpdateIsInProgress")
+                  : t("EnvelopeList.StatusUpdateIsNotPossible")
               }
             >
               {connected ? (
                 <Spinner
-                  className="envelop-status-spinner"
+                  className="envelope-status-spinner"
                   as="span"
                   animation="border"
                   size="sm"
@@ -32,23 +32,23 @@ export function EnvelopList({ envelopes, connected }) {
                 />
               ) : (
                 <img
-                  className="envelop-status-img"
+                  className="envelope-status-img"
                   src="/images/alert-circle-m.png"
                   alt="disconnected"
                 />
               )}
             </TooltipOverlay>
           </th>
-          <th>{t("EnvelopList.Timestamp")}</th>
+          <th>{t("EnvelopeList.Timestamp")}</th>
         </tr>
       </thead>
       <tbody>
-        {envelopes.map((envelop) => (
-          <tr key={envelop.id}>
-            <td>{envelop.name}</td>
-            <td>{envelop.email}</td>
-            <td>{envelop.status}</td>
-            <td>{envelop.timestamp.toLocaleTimeString()}</td>
+        {envelopes.map((envelope) => (
+          <tr key={envelope.id}>
+            <td>{envelope.name}</td>
+            <td>{envelope.email}</td>
+            <td>{envelope.status}</td>
+            <td>{envelope.timestamp.toLocaleTimeString()}</td>
           </tr>
         ))}
       </tbody>
@@ -56,7 +56,7 @@ export function EnvelopList({ envelopes, connected }) {
   );
 }
 
-EnvelopList.propTypes = {
+EnvelopeList.propTypes = {
   envelopes: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
@@ -69,6 +69,6 @@ EnvelopList.propTypes = {
   connected: PropTypes.bool.isRequired,
 };
 
-EnvelopList.defaultProps = {
+EnvelopeList.defaultProps = {
   envelopes: [],
 };
