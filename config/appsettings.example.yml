@@ -1,0 +1,27 @@
+default: &default
+  # Do not add a slash to the end of the app_url,
+  # It will break the JWT callback string
+  app_url: http://localhost:3000
+  # NOTE: The terms "client_id" and "Integration key" are synonyms. They refer to the same thing
+  # The integration_key value is the same between the development account and production account
+  jwt_integration_key: {JWT_KEY}
+  # NOTE: impersonated_user_guid, "User ID" and "API Username" are synonyms. They refer to the same thing
+  # See: https://admindemo.docusign.com/users for the User ID
+  impersonated_user_guid: {USER_GUID}
+  signer_email:  {SIGNER_EMAIL}
+  signer_name: {SIGNER_NAME}
+  # Authentication service endpoint is different between production and development
+  # https://developers.docusign.com/docs/esign-rest-api/go-live/after-go-live/
+  authorization_server: https://account-d.docusign.com
+  aud: account-d.docusign.com
+  allow_silent_authentication: true # A user can be silently authenticated if they have an
+    # Active login session on another tab of the same browser
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default

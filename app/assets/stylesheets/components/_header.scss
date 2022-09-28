@@ -1,0 +1,74 @@
+.header {
+  background-color: transparent;
+
+  .navbar-brand {
+    text-transform: uppercase;
+    padding: 1.25rem 1.25rem;
+    font-size: 14px;
+    font-weight: 700;
+    color: $white !important;
+    letter-spacing: 0.052em;
+    line-height: 17px;
+    &:hover {
+      color: $white;
+    }
+  }
+
+  .navbar-brand-image {
+    background-color: transparent;
+    margin-right: 10px;
+    img {
+      width: 24px;
+    }
+  }
+
+  .nav-item {
+    border: 2px solid transparent;
+    position: relative;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+
+    &.active {
+      //font-weight: $font-weight-bold;
+      color: $success;
+
+      &:before {
+        content: "";
+        width: 3px;
+        background-color: $success;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        @include media-breakpoint-up(lg) {
+          width: auto;
+          height: 3px;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          top: auto;
+          background-color: $white;
+        }
+      }
+    }
+
+    .nav-link {
+      padding-left: 20px;
+      padding-right: 20px;
+      @include media-breakpoint-up(lg) {
+        color: $white !important;
+      }
+
+      &:hover {
+        @include media-breakpoint-up(lg) {
+          color: rgba($white, 0.7) !important;
+        }
+      }
+    }
+
+    .nav-btn {
+      min-width: 110px;
+      margin-left: 20px;
+    }
+  }
+}

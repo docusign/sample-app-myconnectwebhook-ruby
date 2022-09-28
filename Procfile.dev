@@ -1,0 +1,5 @@
+web: bundle exec rails s -p 3000 -b '0.0.0.0'
+websocket: bundle exec puma -p 28080 cable/config.ru
+js: yarn build --watch
+css: yarn build:css --watch
+##lint: yarn lint --watch
