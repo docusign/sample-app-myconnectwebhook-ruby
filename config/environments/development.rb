@@ -19,8 +19,6 @@ Rails.application.configure do
   # Enable server timing
   config.server_timing = true
 
-  config.web_console.permissions = "172.16.0.0/12"
-
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
   if Rails.root.join("tmp/caching-dev.txt").exist?
@@ -71,7 +69,6 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
-
 
   config.hosts << "{NGROK_HOST}"
   config.hosts << "localhost"

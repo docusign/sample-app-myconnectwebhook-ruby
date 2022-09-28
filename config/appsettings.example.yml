@@ -2,17 +2,11 @@ default: &default
   # Do not add a slash to the end of the app_url,
   # It will break the JWT callback string
   app_url: http://localhost:3000
-  # quickstart is an optional setting and can be enabled by setting it to: true
-  quickstart: true
   # NOTE: The terms "client_id" and "Integration key" are synonyms. They refer to the same thing
   # The integration_key value is the same between the development account and production account
-  integration_key: {KEY}
-  # integration secret key https://developers.docusign.com/platform/configuring-app/
-  integration_secret: {SECRET}
-  # NOTE: this jwt_integration_key can have the same value as the above integration_key
   jwt_integration_key: {JWT_KEY}
   # NOTE: impersonated_user_guid, "User ID" and "API Username" are synonyms. They refer to the same thing
-  # See: https://admindemo.docusign.com/users for the API Username
+  # See: https://admindemo.docusign.com/users for the User ID
   impersonated_user_guid: {USER_GUID}
   signer_email:  {SIGNER_EMAIL}
   signer_name: {SIGNER_NAME}
@@ -22,9 +16,6 @@ default: &default
   aud: account-d.docusign.com
   allow_silent_authentication: true # A user can be silently authenticated if they have an
     # Active login session on another tab of the same browser
-  # Set if you want a specific DocuSign AccountId, If false, the users default account will be used.
-  target_account_id: false # Payment gateway information is optional. It is only needed for example 14.
-  # See the PAYMENTS_INSTALLATION.md file for instructions
 
 development:
   <<: *default

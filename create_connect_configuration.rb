@@ -1,8 +1,9 @@
 require 'docusign_esign'
 require 'yaml'
+require 'json'
 
 $SCOPES = [
-     "signature", "impersonation"
+     "signature", "impersonation", "click.manage", "click.send"
 ]
 
 def load_config_data
@@ -109,16 +110,12 @@ https://{YOUR_NGROK_HOST}.ngrok.io/api/docusign/trigger/do_process.json. See REA
   )
 
   connect_configuration = DocuSign_eSign::ConnectCustomConfiguration.new(
-    name: configuration_name,
-    urlToPublishTo: url_to_publish,
+    name: "#{configuration_name}",
+    urlToPublishTo: "#{url_to_publish}",
     enableLog: "true",
     envelopeEvents: [
       "Sent",
-      "Delivered",
-      "Voided",
-      "Resent",
-      "Corrected",
-      "Deleted"
+      "Delivered"
     ],
     eventData: connect_event_data,
     allowEnvelopePublish: "true",
@@ -129,20 +126,28 @@ https://{YOUR_NGROK_HOST}.ngrok.io/api/docusign/trigger/do_process.json. See REA
     events: [
       "click-agreed",
       "click-declined",
-      "envelope-corrected",
-      "recipient-resent",
-      "recipient-finish-later",
-      "envelope-deleted"
+      "recipient-finish-later"
     ],
     recipientEvents: [
       "Declined",
       "Completed",
-      "AutoResponded",
-      "FinishLater"
+      "AutoResponded"
     ],
     signMessageWithX509Certificate: "true"
   )
-  connect_api.create_configuration(account_info[:account_id], connect_configuration)
+
+  begin
+    response=connect_api.create_configuration(account_info[:account_id], connect_configuration)
+    puts "Created a new custom Connect configuration:"
+    puts response
+    puts "SUCCESS"
+  rescue DocuSign_eSign::ApiError => exception
+    body = JSON.parse(exception.response_body)
+    puts "API Error"
+    puts body['error']
+    puts body['message']
+    exit
+  end
 end
 
 def list_connect_configs(account_info)
@@ -153,15 +158,26 @@ def list_connect_configs(account_info)
 
   connect_api = DocuSign_eSign::ConnectApi.new api_client
 
-  connect_api.list_configurations(account_info[:account_id])
+  begin
+    response=connect_api.list_configurations(account_info[:account_id])
+    puts "Listing all connect configurations in account:"
+    puts response
+    puts "SUCCESS"
+  rescue DocuSign_eSign::ApiError => exception
+    body = JSON.parse(exception.response_body)
+    puts "API Error"
+    puts body['error']
+    puts body['message']
+    exit
+  end
 end
 
 
 def main
   account_info = authenticate
-  puts create_connect_config(account_info)
-  # puts list_connect_configs(account_info)
-  puts "DONE"
+  create_connect_config(account_info)
+  # Uncomment the following line to make an API call to get a list of all connect configurations in your account
+  # list_connect_configs(account_info)
 end
 
 CONFIG = load_config_data["default"]
