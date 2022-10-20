@@ -7,16 +7,8 @@
     <meta property="og:description" content="Discover how the DocuSign Connect webhook service can help you monitor and automate your business processes through real-time updates when specific events are triggered in your workflows." />
     <meta property="og:image" content="/images/MyConnectWebhook_OG.png" />
 
-    <!-- Google Tag Manager -->
-    <script>
-      (function(w,d,s,l,i){
-        w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
-        var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:';
-        j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;
-        f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-WPK6FN5');
-    </script>
-    <!-- End Google Tag Manager -->
+    <div class="  "></div>
+    <%= render '/partials/track_analytics' %>
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -29,6 +21,9 @@
   </head>
 
   <body>
+    <noscript>
+      <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-WPK6FN5" style="display:none;visibility:hidden" width="0"></iframe>
+    </noscript>
     <%= yield %>
   </body>
 </html>
