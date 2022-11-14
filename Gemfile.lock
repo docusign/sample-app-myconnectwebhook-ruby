@@ -86,7 +86,7 @@ GEM
       json (~> 2.1, >= 2.1.0)
       jwt (~> 2.2, >= 2.2.1)
       typhoeus (~> 1.0, >= 1.0.1)
-    docusign_esign (3.18.0)
+    docusign_esign (3.19.0)
       addressable (~> 2.7, >= 2.7.0)
       json (~> 2.1, >= 2.1.0)
       jwt (~> 2.2, >= 2.2.1)
@@ -99,6 +99,7 @@ GEM
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (2.0.3)
     ffi (1.15.5)
+    ffi (1.15.5-x64-mingw-ucrt)
     globalid (1.0.0)
       activesupport (>= 5.0)
     hashie (5.0.0)
@@ -134,6 +135,8 @@ GEM
       net-protocol
       timeout
     nio4r (2.5.8)
+    nokogiri (1.13.7-x64-mingw-ucrt)
+      racc (~> 1.4)
     nokogiri (1.13.7-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.13.7-x86_64-linux)
@@ -156,6 +159,7 @@ GEM
     parser (3.1.2.0)
       ast (~> 2.4.1)
     pg (1.4.1)
+    pg (1.4.1-x64-mingw-ucrt)
     psych (3.3.2)
     public_suffix (4.0.7)
     puma (5.6.4)
@@ -251,6 +255,7 @@ GEM
     zeitwerk (2.6.0)
 
 PLATFORMS
+  x64-mingw-ucrt
   x86_64-darwin-21
   x86_64-linux
 
@@ -259,7 +264,7 @@ DEPENDENCIES
   bootsnap
   cssbundling-rails
   docusign_click (~> 1.1.0)
-  docusign_esign (~> 3.18.0)
+  docusign_esign (~> 3.19.0)
   jsbundling-rails
   omniauth-oauth2 (~> 1.8.0)
   pg
