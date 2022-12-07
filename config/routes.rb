@@ -39,9 +39,9 @@ Rails.application.routes.draw do
 
       resources :clickwrap, only: [], constraints: only_json do
         collection do
-          # init params for FE, to send out Clickwrap
+          # init params for FE, to send out elastic template
           get :init_params
-          # store data about sent Clickwrap
+          # store data about sent elastic signing agreements
           post :store_data
         end
       end

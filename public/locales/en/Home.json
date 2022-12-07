@@ -12,9 +12,9 @@
     "Button": "Get Started"
   },
   "Card2": {
-    "Title": "Automate workflow based on a clickwrap agreement",
-    "Description": "Example: Trigger a business workflow based on Connect notifications from a clickwrap agreement.",
-    "Features": "<h4 class='h4 card-info-list-title'>DocuSign Features</h4><ul class='custom-list'><li>Create and activate a clickwrap</li><li>Embed a clickwrap on your site</li><li>DocuSign Connect webhook service</li><li>Remote signing</li></ul>",
+    "Title": "Automate workflow based on an elastic signing agreement",
+    "Description": "Example: Trigger a business workflow based on Connect notifications from an elastic template.",
+    "Features": "<h4 class='h4 card-info-list-title'>DocuSign Features</h4><ul class='custom-list'><li>Create and activate an elastic template</li><li>Embed an elastic template on your site</li><li>DocuSign Connect webhook service</li><li>Remote signing</li></ul>",
     "Button": "Get Started"
   },
   "Resources": {
