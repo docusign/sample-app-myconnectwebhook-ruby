@@ -14,7 +14,7 @@ MyConnectWebhook demonstrates the following:
 4. **Elastic signing:** ([Source](./app/javascript/src/pages/automatedWorkflow/index.js))
    This example demonstates signing process of a DocuSign [elastic template](https://developers.docusign.com/docs/click-api/how-to/create-elastic-templates/) document.
 5. **Sending out a confirmation envelope after a successful elastic signature:** ([Source](./app/services/e_sign/send_envelope_service.rb))
-   This example uses the DocuSign [eSignature REST API](https://developers.docusign.com/docs/esign-rest-api/), demonstrating how to [crete an envelope](https://developers.docusign.com/docs/esign-rest-api/reference/envelopes/envelopes/create/). The example sends an envelope based on PDF template.
+   This example uses the DocuSign [eSignature REST API](https://developers.docusign.com/docs/esign-rest-api/), demonstrating how to [create an envelope](https://developers.docusign.com/docs/esign-rest-api/reference/envelopes/envelopes/create/). The example sends an envelope based on PDF template.
 
 ## Prerequisites
 
