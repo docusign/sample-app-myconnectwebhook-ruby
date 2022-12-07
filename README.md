@@ -8,12 +8,12 @@ MyConnectWebhook is a DocuSign sample application written in Ruby on Rails (serv
 MyConnectWebhook demonstrates the following:
 
 1. **Authentication** with DocuSign via [JSON Web Token (JWT) Grant](https://developers.docusign.com/esign-rest-api/guides/authentication/oauth2-jsonwebtoken).
-2. **Bulk Sending Multiple Envelopes:** ([Source](./app/services/e_sign/bulk_sending_envelopes_service.rb))
+2. **Bulk sending multiple envelopes:** ([Source](./app/services/e_sign/bulk_sending_envelopes_service.rb))
    This example uses the DocuSign [eSignature REST API](https://developers.docusign.com/docs/esign-rest-api/) to [Bulk Send](https://developers.docusign.com/docs/esign-rest-api/reference/bulkenvelopes/bulksend/) multiple envelopes based on PDF document template, and filling data dynamically.
-3. **Tracking User Signing Progress with Docusign Connect feature.** After the request has been sent to Docusign, the app awaits for webhook requests from [Docusign Connect](https://developers.docusign.com/platform/webhooks/connect/) and displays the result on UI.
-4. **Signing Clickwrap Document:** ([Source](./app/javascript/src/pages/automatedWorkflow/index.js))
-   This example demonstates signing process of DocuSign [Clickwrap](https://developers.docusign.com/docs/click-api/how-to/create-elastic-templates/) document.
-5. **Sending out Confirmation Envelope after Successful Clickwrap Signature:** ([Source](./app/services/e_sign/send_envelope_service.rb))
+3. **Tracking user signing progress with the Docusign Connect webhook service.** After the request has been sent to Docusign, the app awaits for webhook requests from [Docusign Connect](https://developers.docusign.com/platform/webhooks/connect/) and displays the result on UI.
+4. **Elastic signing:** ([Source](./app/javascript/src/pages/automatedWorkflow/index.js))
+   This example demonstates signing process of a DocuSign [elastic template](https://developers.docusign.com/docs/click-api/how-to/create-elastic-templates/) document.
+5. **Sending out a confirmation envelope after a successful elastic signature:** ([Source](./app/services/e_sign/send_envelope_service.rb))
    This example uses the DocuSign [eSignature REST API](https://developers.docusign.com/docs/esign-rest-api/), demonstrating how to [crete an envelope](https://developers.docusign.com/docs/esign-rest-api/reference/envelopes/envelopes/create/). The example sends an envelope based on PDF template.
 
 ## Prerequisites

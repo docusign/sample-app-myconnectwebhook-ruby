@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# class for handling Clickwraps
+# class for handling elastic templates
 class Clickwrap < ApplicationRecord
   belongs_to :user
 
