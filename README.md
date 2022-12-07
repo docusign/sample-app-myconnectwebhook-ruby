@@ -20,7 +20,7 @@ MyConnectWebhook demonstrates the following:
 
 * A DocuSign developer account. Create a [free account](https://go.docusign.com/o/sandbox/).
 * A DocuSign integration key (client ID) that is configured to use JSON Web Token (JWT) Grant.
-  You will need the **integration key** itself and its **RSA key pair**. Copy your **RSA key pair** into a file in your config folder `config/docusign_private_key.txt`. You must also add your application's **Redirect URI** to your integration key. To run the app locally, this should be "http://localhost:3000/auth/docusign/callback". This [**video**](https://www.youtube.com/watch?v=GgDqa7-L0yo) demonstrates how to create an integration key (client ID) for a user application like this example.
+  You will need the **integration key** itself and its **RSA key pair**. Copy your **RSA key pair** into a file in your config folder `config/docusign_private_key.txt`. You must also add your application's **Redirect URI** to your integration key. To run the app locally, this should be `http://localhost:3000/auth/docusign/callback`. This [**video**](https://www.youtube.com/watch?v=GgDqa7-L0yo) demonstrates how to create an integration key (client ID) for a user application like this example.
 * [Ruby 3.1.2](https://www.ruby-lang.org/en/downloads/)
 * [Node.js](https://nodejs.org/) v16+
 
