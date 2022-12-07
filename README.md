@@ -9,12 +9,12 @@ MyConnectWebhook demonstrates the following:
 
 1. **Authentication** with DocuSign via [JSON Web Token (JWT) Grant](https://developers.docusign.com/esign-rest-api/guides/authentication/oauth2-jsonwebtoken).
 2. **Bulk Sending Multiple Envelopes:** ([Source](./app/services/e_sign/bulk_sending_envelopes_service.rb))
-   This example uses the DocuSign [eSignature REST API](https://developers.docusign.com/esign-rest-api) to [Bulk Send](https://developers.docusign.com/docs/esign-rest-api/reference/bulkenvelopes/bulksend/) multiple envelopes based on PDF document template, and filling data dynamically.
+   This example uses the DocuSign [eSignature REST API](https://developers.docusign.com/docs/esign-rest-api/) to [Bulk Send](https://developers.docusign.com/docs/esign-rest-api/reference/bulkenvelopes/bulksend/) multiple envelopes based on PDF document template, and filling data dynamically.
 3. **Tracking User Signing Progress with Docusign Connect feature.** After the request has been sent to Docusign, the app awaits for webhook requests from [Docusign Connect](https://developers.docusign.com/platform/webhooks/connect/) and displays the result on UI.
 4. **Signing Clickwrap Document:** ([Source](./app/javascript/src/pages/automatedWorkflow/index.js))
-   This example demonstates signing process of DocuSign [Clickwrap](https://developers.docusign.com/docs/click-api/how-to/create-clickwraps/) document.
+   This example demonstates signing process of DocuSign [Clickwrap](https://developers.docusign.com/docs/click-api/how-to/create-elastic-templates/) document.
 5. **Sending out Confirmation Envelope after Successful Clickwrap Signature:** ([Source](./app/services/e_sign/send_envelope_service.rb))
-   This example uses the DocuSign [eSignature REST API](https://developers.docusign.com/esign-rest-api), demonstrating how to [crete an envelope](https://developers.docusign.com/docs/esign-rest-api/reference/envelopes/envelopes/create/). The example sends an envelope based on PDF template.
+   This example uses the DocuSign [eSignature REST API](https://developers.docusign.com/docs/esign-rest-api/), demonstrating how to [crete an envelope](https://developers.docusign.com/docs/esign-rest-api/reference/envelopes/envelopes/create/). The example sends an envelope based on PDF template.
 
 ## Prerequisites
 
@@ -52,34 +52,38 @@ The ruby script included with this project sets up a custom Connect configuratio
 * Check https://admindemo.docusign.com/connect to view or edit your new custom Connect configuration!
 
 ### Using the DocuSign UI
-* Visit https://admindemo.docusign.com/connect
+* Visit https://admindemo.docusign.com/authenticate?goTo=connect
 * Select "ADD CONFIGURATION" --> "Custom"
 * Add a name for your custom Connect configuration
 * In the `URL to Publish` field enter `https://{YOUR_NGROK_HOST}.ngrok.io/api/docusign/trigger/do_process.json`. This will allow Connect to send request to your local environment.
 * subscribe to the events you wish your app to receive notifications for. Events for this app include
 
-Envelope and Recipients:
-  * Envelope Sent
-  * Envelope Delivered
-  * Recipient Auto Responded
-  * Recipient Signed/Completed
-  * Recipient Declined
-  * Recipient Finish Later
+    Envelope and Recipients:
 
-  Include Data:
-  * Custom Fields
-  * Recipients
+      Envelope Sent
+      Envelope Delivered
+      Recipient Auto Responded
+      Recipient Signed/Completed
+      Recipient Declined
+      Recipient Finish Later
 
-DocuSign Click:
-  * Click Agreed
-  * Click Declined
+
+      Include Data:
+        Custom Fields
+        Recipients
+
+    DocuSign Click:
+
+      Click Agreed
+      Click Declined
+
 
 * Select "Enable Mutual TLS"
 * "SAVE CONFIGURATION"
 
 ## Installation steps
 
-**NOTE:** The first time you run the app with a new client id, you must grant consent for the application to perform actions on behalf of the user. Fill in your integration key and redirect url to the following consent url template and visit https://account-d.docusign.com/oauth/auth?response_type=code&scope=signature+impersonation+click.manage+click.send&client_id=#{jwt_integration_key}&redirect_uri=#{redirect_uri} to grant consent.
+**NOTE:** The first time you run the app with a new client id, you must grant consent for the application to perform actions on behalf of the user. Fill in your integration key and redirect url to the following consent url template and visit `https://account-d.docusign.com/oauth/auth?response_type=code&scope=signature+impersonation+click.manage+click.send&client_id=#{jwt_integration_key}&redirect_uri=#{redirect_uri}` to grant consent.
 
 ### Running app using docker compose
 To build app:
