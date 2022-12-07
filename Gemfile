@@ -27,7 +27,7 @@ group :development do
 end
 
 gem "docusign_click", "~> 1.1.0"
-gem "docusign_esign", "~> 3.18.0"
+gem "docusign_esign", "~> 3.19.0"
 gem "omniauth-oauth2", "~> 1.8.0"
 
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
