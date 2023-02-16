@@ -27,7 +27,7 @@ MyConnectWebhook demonstrates the following:
 ### Required variables for `config/appsettings.yml`
 
 * **app_url** - http://localhost:3000
-* **jwt_integration_key** - this jwt_integration_key can have the same value as the above integration_key
+* **jwt_integration_key** - The integration key is the same as the client ID
 * **impersonated_user_guid** - Your User ID
 * **signer_email** - Your API account Email
 * **signer_name** - Your API account Name
