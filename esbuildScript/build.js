@@ -1,16 +1,20 @@
 const glob = require("tiny-glob");
-const { build } = require("esbuild");
+const { context } = require("esbuild");
 const { envPlugin } = require("./envPlugin");
 
 (async () => {
   const entryPoints = await glob("./app/javascript/*.*");
-  await build({
+  const ctx = await context({
     entryPoints,
     bundle: true,
     sourcemap: true,
     outdir: "app/assets/builds",
     plugins: [envPlugin],
     loader: { ".js": "jsx" },
-    watch: process.argv.some((x) => x === "--watch"),
   });
+
+  if(process.argv.some((x) => x === "--watch")) {
+    await ctx.watch();
+  }
+  await ctx.serve();
 })();
