@@ -16,7 +16,7 @@ default: &default
   aud: account-d.docusign.com
   allow_silent_authentication: true # A user can be silently authenticated if they have an
     # Active login session on another tab of the same browser
-  # Set if you want a specific DocuSign AccountId, If false, the users default account will be used.
+  # Set if you want a specific Docusign AccountId, If false, the users default account will be used.
   target_account_id: false
 
 development:
