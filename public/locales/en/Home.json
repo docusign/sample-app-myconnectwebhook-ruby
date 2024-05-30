@@ -1,25 +1,25 @@
 {
   "Header1": "MyConnectWebhook",
-  "Header2": "Discover how the DocuSign Connect webhook service can help you monitor and automate your business processes through real-time updates when specific events are triggered in your workflows.",
-  "Footer1": "DocuSign: It's time to agree better",
-  "Footer2": "<p>DocuSign helps organizations connect and automate how they prepare, sign, act on, and manage agreements.</p>",
+  "Header2": "Discover how the Docusign Connect webhook service can help you monitor and automate your business processes through real-time updates when specific events are triggered in your workflows.",
+  "Footer1": "Docusign: It's time to agree better",
+  "Footer2": "<p>Docusign helps organizations connect and automate how they prepare, sign, act on, and manage agreements.</p>",
   "SandBoxButton": "Create Developer Account",
   "LearnMoreButton": "Learn More",
   "Card1": {
     "Title": "Monitor envelope status from a bulk send request",
-    "Description": "Example: Use DocuSign Connect webhook notifications to update information systems with envelope status and timing.",
-    "Features": "<h4 class='h4 card-info-list-title'>DocuSign Features</h4><ul class='custom-list'><li>Anchor tagging</li><li>Custom fields</li><li>Bulk send</li><li>DocuSign Connect webhook service</li></ul>",
+    "Description": "Example: Use Docusign Connect webhook notifications to update information systems with envelope status and timing.",
+    "Features": "<h4 class='h4 card-info-list-title'>Docusign Features</h4><ul class='custom-list'><li>Anchor tagging</li><li>Custom fields</li><li>Bulk send</li><li>Docusign Connect webhook service</li></ul>",
     "Button": "Get Started"
   },
   "Card2": {
     "Title": "Automate workflow based on an elastic signing agreement",
-    "Description": "Example: Trigger a business workflow based on Connect notifications from an elastic signing agreement.", 
-    "Features": "<h4 class='h4 card-info-list-title'>DocuSign Features</h4><ul class='custom-list'><li>Create and activate an elastic template</li><li>Embed an elastic template on your site</li><li>DocuSign Connect webhook service</li><li>Remote signing</li></ul>",
+    "Description": "Example: Trigger a business workflow based on Connect notifications from an elastic signing agreement.",
+    "Features": "<h4 class='h4 card-info-list-title'>Docusign Features</h4><ul class='custom-list'><li>Create and activate an elastic template</li><li>Embed an elastic template on your site</li><li>Docusign Connect webhook service</li><li>Remote signing</li></ul>",
     "Button": "Get Started"
   },
   "Resources": {
     "Title": "Resources",
-    "DocuSignConnect": "DocuSign Connect",
+    "DocuSignConnect": "Docusign Connect",
     "RubySignatureSdk": "Ruby eSignature SDK",
     "RubyClickSdk": "Ruby Click SDK"
   }
