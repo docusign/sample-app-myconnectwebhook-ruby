@@ -9,9 +9,9 @@ gem "bootsnap", require: false
 gem "cssbundling-rails"
 gem "jsbundling-rails"
 gem "pg"
-gem "puma", "~> 6.4.2"
-gem "rails", "~> 7.1.3.2"
-gem "redis", "~> 5.1.0"
+gem "puma", "~> 6.4.3"
+gem "rails", "~> 7.2.2"
+gem "redis", "~> 5.3.0"
 gem "sprockets-rails"
 gem "stimulus-rails"
 gem "turbo-rails"
@@ -27,7 +27,7 @@ group :development do
 end
 
 gem "docusign_click", "~> 1.4.0"
-gem "docusign_esign", "~> 3.26.0"
+gem "docusign_esign", "~> 5.0.0"
 gem "omniauth-oauth2", "~> 1.8.0"
 
 gem "tzinfo-data"
