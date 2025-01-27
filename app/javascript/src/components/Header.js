@@ -38,7 +38,7 @@ export function Header() {
               <li className="nav-item">
                 <a
                   className="nav-link"
-                  href="https://github.com/docusign/sample-app-myconnectwebhook-ruby"
+                  href="https://github.com/docusign/sample-app-webhooks-ruby"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

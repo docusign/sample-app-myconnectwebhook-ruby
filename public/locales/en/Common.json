@@ -1,7 +1,7 @@
 ﻿{
-  "ApplicationName": "MyConnectWebhook",
+  "ApplicationName": "Webhooks Sample App",
   "GitHubLink": "GitHub Source",
-  "Copyright": "© 2024 Docusign Inc.",
+  "Copyright": "© 2025 Docusign Inc.",
   "LogOutLink": "Logout",
   "LogInButton": "Login",
   "AlertMessage": "Sorry, there was some issue with the Code Grant Authorization, so you have been logged with JWT authorization"

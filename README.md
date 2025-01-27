@@ -1,11 +1,11 @@
-# Ruby on Rails and React: MyConnectWebhook Sample Application
+# Ruby on Rails and React: Webhooks Sample App
 
-### Github repo: MyConnectWebhookSampleApp
+### Github repo: Webhooks Sample App
 
 ## Introduction
-MyConnectWebhook is a Docusign sample application written in Ruby on Rails (server) and React (client). You can find a live instance running at [https://myconnectwebhook.sampleapps.docusign.com/](https://myconnectwebhook.sampleapps.docusign.com/).
+The Webhooks Sample App is a Docusign sample application written in Ruby on Rails (server) and React (client). You can find a live instance running at [https://webhooks.sampleapps.docusign.com/](https://webhooks.sampleapps.docusign.com/).
 
-MyConnectWebhook demonstrates the following:
+The Webhooks Sample App demonstrates the following:
 
 1. **Authentication** with Docusign via [JSON Web Token (JWT) Grant](https://developers.docusign.com/esign-rest-api/guides/authentication/oauth2-jsonwebtoken).
 2. **Bulk sending multiple envelopes:** ([Source](./app/services/e_sign/bulk_sending_envelopes_service.rb))
@@ -37,13 +37,13 @@ MyConnectWebhook demonstrates the following:
 ## Installation steps
 
 ### Clone project
-Clone project into folder `./sample-app-myconnectwebhook-ruby`
+Clone project into folder `./sample-app-webhooks-ruby`
 ```
-git clone git@github.com:docusign/sample-app-myconnectwebhook-ruby.git
+git clone git@github.com:docusign/sample-app-webhooks-ruby.git
 ```
 ### Run command to move to project folder
 ```
-cd sample-app-myconnectwebhook-ruby
+cd sample-app-webhooks-ruby
 ```
 
 ### Create appsettings.yml file
@@ -73,11 +73,11 @@ config.hosts << "xxx-xx-xxx-xxx-xx.ngrok.io"
 ### Setup your custom Docusign Connect configuration
 
 #### Using a ruby script
-The ruby script included with this project sets up a custom Connect configuration with the same settings that the hosted app uses at https://myconnectwebhook.sampleapps.docusign.com. You'll need to provide a name for your new custom connect configuration as well as the URL to publish which, if running locally using ngrok, should follow the format `https://{YOUR_NGROK_HOST}.ngrok.io/api/docusign/trigger/do_process.json`.
+The ruby script included with this project sets up a custom Connect configuration with the same settings that the hosted app uses at https://webhooks.sampleapps.docusign.com. You'll need to provide a name for your new custom connect configuration as well as the URL to publish which, if running locally using ngrok, should follow the format `https://{YOUR_NGROK_HOST}.ngrok.io/api/docusign/trigger/do_process.json`.
 
 * Navigate to the root folder of the app
   ```
-  cd sample-app-myconnectwebhook-ruby
+  cd sample-app-webhooks-ruby
   ```
 * Run the ruby script `create_connect_configuration.rb`
   ```
@@ -196,7 +196,7 @@ Use NVM https://github.com/nvm-sh/nvm and Node.js version 16+.
 yarn install
 ```
 
-#### Running MyConnectWebhook Sample App
+#### Running the Webhooks Sample App
 ```
  bin/dev
 ```
