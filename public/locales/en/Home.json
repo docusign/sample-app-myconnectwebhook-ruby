@@ -1,8 +1,6 @@
 {
   "Header1": "Webhooks Sample App",
   "Header2": "Discover how the Docusign Connect webhook service can help you monitor and automate your business processes through real-time updates when specific events are triggered in your workflows.",
-  "Footer1": "Docusign: It's time to agree better",
-  "Footer2": "<p>Docusign helps organizations connect and automate how they prepare, sign, act on, and manage agreements.</p>",
   "SandBoxButton": "Create Developer Account",
   "LearnMoreButton": "Learn More",
   "Card1": {

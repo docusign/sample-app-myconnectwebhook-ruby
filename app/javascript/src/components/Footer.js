@@ -6,7 +6,6 @@ export function Footer() {
   return (
     <footer role="contentinfo" className="footer pt-2 pb-2">
       <div className="container">
-        <span className="copyright">{t('Copyright')}</span>
       </div>
     </footer>
   );

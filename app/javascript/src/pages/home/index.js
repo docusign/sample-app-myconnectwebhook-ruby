@@ -57,8 +57,6 @@ export function Home() {
         />
       </FeaturesSection>
       <CTASection
-        title={t("Footer1")}
-        description={parse(t("Footer2"))}
         primaryLink={{
           name: t("SandBoxButton"),
           href: "https://go.docusign.com/o/sandbox/",
