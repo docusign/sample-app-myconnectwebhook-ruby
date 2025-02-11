@@ -7,7 +7,7 @@
     "bootstrap": "^5.3.3",
     "dotenv": "^16.4.5",
     "email-validator": "^2.0.4",
-    "esbuild": "^0.17.19",
+    "esbuild": "^0.25.0",
     "eslint": "^7.32.0 || ^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-watch": "^8.0.0",
